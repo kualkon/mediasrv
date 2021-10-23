@@ -1,0 +1,13 @@
+transmission:
+  image: gists/transmission
+  ports:
+    - "9091:9091"
+    - "51413:51413"
+  volumes:
+  volumes:
+      - /media:/data
+
+  environment:
+    - USERNAME=tm
+    - PASSWORD=tm
+  restart: always
