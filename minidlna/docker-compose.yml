@@ -1,0 +1,19 @@
+    minidlna:
+    container_name: minidlna
+    image: sego/minidlna
+    restart: always
+    
+    volumes:
+      - /media/downloads:/media
+
+    environment:
+      - MINIDLNA_media_dir=/media/downloads    
+      - MINIDLNA_friendly_name=MiniDLNA
+      - MINIDLNA_merge_media_dirs=yes
+      - MINIDLNA_force_sort_criteria= upnp:class, upnp:originalTrackNumber, dc:title
+      - MINIDLNA_root_container=B
+
+
+#network_mode: "none"    
+#network_mode: "host"
+#network_mode: host
